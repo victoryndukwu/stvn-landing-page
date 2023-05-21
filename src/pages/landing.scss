@@ -1,0 +1,30 @@
+@mixin flex-element($flex-direction, $align:0) {
+  display: flex;
+  flex-direction: $flex-direction;
+  @if $align != 0{
+    align-items: $align;
+  }
+}
+
+.nav {
+  @include flex-element(row, center);
+  justify-content: center;
+
+  &__menu {
+    @include flex-element(row);
+    margin: 0 50px 0 20px;
+
+    &-item {
+      list-style-type: none;
+      padding: 0 40px;
+    }
+  }
+
+  &__user {
+    @include flex-element(row);
+    &-item {
+      list-style-type: none;
+      padding: 0 10px;
+    }
+  }
+}
